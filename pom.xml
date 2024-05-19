@@ -8,29 +8,23 @@
 	<artifactId>poc-spring-aggregrator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<parent>
+		<groupId>io.spring.platform</groupId>
+		<artifactId>platform-bom</artifactId>
+		<version>2.0.1.RELEASE</version>
+	</parent>
+
 	<!-- added packaging and description tag into it-->
 
 	<packaging>pom</packaging>
 	<description>Spring poc parent of all modules/child projects</description>
-	<name>poc-spring-aggregrator</name>
-	<url>http://www.example.com</url>
-	<distributionManagement>
-		<repository>
-			<id>${repo.releases.id}</id>
-			<url>${repo.releases.url}</url>
-		</repository>
-		<snapshotRepository>
-			<id>${repo.snapshots.id}</id>
-			<url>${repo.snapshots.url}</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<modules>
 		<module>microservice-parent</module>
 		<module>microservice-order-service</module>
 		<module>microservice-consumer-service</module>
 		<module>microservice-kitchen-service</module>
 		<module>microservice-accounting-service</module>
+		<module>microservice-models</module>
 	</modules>
 
 	<build>
@@ -55,6 +49,14 @@
 							<releaseFinishMessage>release: update for next
 								deployment version @{version}</releaseFinishMessage>
 						</commitMessages>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>
+						<processAllModules>true</processAllModules>
 					</configuration>
 				</plugin>
 			</plugins>

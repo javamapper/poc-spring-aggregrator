@@ -11,13 +11,13 @@
 		<groupId>com.javamapper</groupId>
 		<artifactId>microservice-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>.../microservice-parent</relativePath>
+		<relativePath>../microservice-parent/pom.xml</relativePath>
 	</parent>
 
 	<properties>
 		<spring-boot.maven.repackage.skip>true</spring-boot.maven.repackage.skip>
 	</properties>
 	<dependencies>
-
+	
 	</dependencies>
 </project>
